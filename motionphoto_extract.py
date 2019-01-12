@@ -31,10 +31,11 @@ def main():
                                                  "pictures taken on a Samsung Galaxy "
                                                  "smartphone (S7 or newer).")
     parser.add_argument("image_file", type=str, help="Image file to open")
-    parser.add_argument("output_file", type=str, help="\"Motion photo\" video to output")
+    parser.add_argument("output_file", type=str, nargs="?",
+                        help="\"Motion photo\" video to output")
 
     args = parser.parse_args()
-    extract_motion_photo(args.image_file)
+    extract_motion_photo(args.image_file, args.output_file)
 
 if __name__ == "__main__":
     main()
